@@ -32,28 +32,31 @@ STYLE_PRESETS: dict[str, dict[str, str]] = {
     },
     "magazine": {
         "description": (
-            "High-end magazine editorial spread. Strictly black and white with dramatic contrast. "
-            "Think Monocle magazine meets Swiss International Typographic Style. "
-            "Bold Helvetica/Futura-style sans-serif typography with extreme size contrast between headline and body. "
-            "Generous negative space. Razor-thin hairline rules separating sections. "
-            "Photography-quality halftone dot texture accents. The design breathes sophistication and restraint."
+            "High-end museum editorial spread inspired by the Whitney Museum of American Art website. "
+            "Neue Haas Grotesk / Helvetica-style sans-serif typography with extreme size contrast between headline and body. "
+            "Clean, gallery-like design where content is treated as art. "
+            "Generous negative space and precise grid alignment. Razor-thin hairline rules separating sections. "
+            "Bold color accents punctuate a predominantly white canvas — like an exhibition catalog. "
+            "The design breathes sophistication, curatorial authority, and contemporary art-world elegance."
         ),
         "colors": (
-            "Pure black and white only. No gray tones except for subtle halftone textures. "
-            "Solid black headline text on white, or reversed white text on black blocks. "
-            "High contrast, no gradients."
+            "Predominantly white background with rich black typography. "
+            "One bold accent color per slide — deep museum red, electric blue, or warm ochre — used sparingly "
+            "for a single typographic element, a geometric shape, or a section divider. "
+            "Subtle warm gray tones for secondary text. High contrast but not strictly monochrome."
         ),
         "layout": (
             "Grid-based editorial layout with strong vertical and horizontal alignment. "
-            "Oversized bold headline dominates the top third. "
-            "Key points set in a clean two-column or single-column layout with generous line spacing. "
+            "Oversized bold headline dominates the top third, potentially with a single accent color word. "
+            "Key points set in a clean single-column or asymmetric two-column layout with generous line spacing. "
             "Pull-quote style for the context text — large quotation marks, indented block. "
-            "Thin black horizontal rules separate each section. Page number in bottom corner."
+            "Thin hairline rules separate each section. Slide number in a minimal bottom corner badge."
         ),
         "visual_direction": (
-            "Use abstract geometric shapes — circles, lines, rectangles — as compositional elements, not decoration. "
-            "No illustrations or icons. Let typography and whitespace do the work. "
-            "If an image element is needed, use a high-contrast black silhouette or halftone dot pattern."
+            "Use bold geometric shapes — circles, lines, rectangles — as compositional color accents, not decoration. "
+            "A single large-scale abstract form can anchor the composition like a gallery installation. "
+            "Let typography and whitespace do the heavy lifting. "
+            "If imagery is needed, use flat graphic silhouettes or high-contrast halftone patterns in the accent color."
         ),
     },
     "comic": {
@@ -110,6 +113,36 @@ STYLE_PRESETS: dict[str, dict[str, str]] = {
             "coffee cup rings, small printed memes or diagrams taped on. "
             "Some elements look like printouts taped to the board, others like handwritten notes. "
             "A pencil or marker casually placed on the board edge."
+        ),
+    },
+    "chalkboard": {
+        "description": (
+            "Classic classroom chalkboard infographic. Content is drawn in chalk on a dark green or "
+            "dark slate chalkboard surface with realistic chalk texture — dusty, slightly uneven strokes. "
+            "Handwritten chalk lettering for all text with natural imperfections. "
+            "Diagrams, arrows, and underlines feel like a brilliant professor's lecture notes. "
+            "Chalk dust smudges and eraser marks add authenticity. "
+            "The feel is academic, authoritative, and nostalgic — like the best lecture you ever attended."
+        ),
+        "colors": (
+            "Dark green or dark slate chalkboard background. White chalk for primary text and diagrams. "
+            "Pastel chalk accents — soft yellow, pale blue, pink, and peach — for highlights, "
+            "underlines, and callout boxes. Subtle chalk dust haze around text edges."
+        ),
+        "layout": (
+            "Structured but hand-drawn lecture layout. Title in large, bold chalk letters across the top, "
+            "underlined with a slightly wavy chalk line. "
+            "Key points arranged with chalk bullet markers or numbered with circled digits. "
+            "Connecting arrows and bracket annotations between related ideas. "
+            "Summary in a chalk-drawn rounded rectangle or banner at the bottom. "
+            "Slide number written in the bottom corner as if casually added by the professor."
+        ),
+        "visual_direction": (
+            "Draw chalk-style diagrams: flowcharts, Venn diagrams, simple graphs, arrows, brackets, "
+            "stick figures at a podium, lightbulb moments, and equation-like notation. "
+            "Include chalk underlines and circles around key terms for emphasis. "
+            "Some areas have faint eraser smudges where content was revised. "
+            "A chalk piece and eraser resting on the ledge at the bottom of the board."
         ),
     },
 }

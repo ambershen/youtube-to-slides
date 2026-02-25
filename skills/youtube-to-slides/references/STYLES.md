@@ -1,6 +1,6 @@
 # Style Presets
 
-youtube-to-slides supports 4 visual styles for infographic generation. Each produces a distinctly different aesthetic.
+youtube-to-slides supports 5 visual styles for infographic generation. Each produces a distinctly different aesthetic.
 
 ## davinci (default)
 
@@ -18,15 +18,15 @@ Hand-drawn ink illustrations on aged parchment, reminiscent of Leonardo da Vinci
 
 ## magazine
 
-**High-end editorial spread**
+**Museum editorial spread**
 
-Black and white with dramatic contrast, inspired by Monocle-style Swiss typography. Razor-thin rules, generous negative space, and bold typographic hierarchy.
+Inspired by the Whitney Museum of American Art's design language — Neue Haas Grotesk typography, gallery-like white space, and bold single-color accents. Clean, curatorial, and contemporary.
 
-- **Colors:** Pure black and white only, no gray tones except subtle halftone textures
-- **Layout:** Grid-based editorial layout, oversized bold headline, two-column or single-column, pull-quote style, thin black rules
-- **Visuals:** Abstract geometric shapes (circles, lines, rectangles), no illustrations, high-contrast silhouettes or halftone patterns
+- **Colors:** Predominantly white with rich black typography; one bold accent color per slide (deep red, electric blue, or warm ochre) used sparingly for emphasis
+- **Layout:** Grid-based editorial layout, oversized bold headline with optional accent color word, generous line spacing, pull-quote style, thin hairline rules
+- **Visuals:** Bold geometric shapes as compositional color accents, flat graphic silhouettes, typography and whitespace as primary design elements
 
-**Best for:** Business topics, interviews, professional content, minimalist aesthetic.
+**Best for:** Business topics, interviews, professional content, contemporary and art-forward aesthetic.
 
 ---
 
@@ -55,3 +55,17 @@ Kraft paper and corkboard background with a mix of handwritten marker text, type
 - **Visuals:** Hand-drawn doodles (stick figures, flowcharts, arrows, stars, lightbulbs, coffee rings), printouts taped on, handwritten notes, pencil on board edge
 
 **Best for:** Study notes, brainstorming summaries, creative topics, personal/informal content.
+
+---
+
+## chalkboard
+
+**Classic classroom chalkboard**
+
+Chalk on a dark green slate board with realistic chalk texture — dusty, slightly uneven strokes. Handwritten chalk lettering, diagrams, and annotations like a brilliant professor's lecture notes.
+
+- **Colors:** Dark green/slate background, white chalk for primary text, pastel chalk accents (soft yellow, pale blue, pink, peach) for highlights and callouts
+- **Layout:** Lecture-style layout with bold chalk title and wavy underline at top, numbered or bulleted key points, connecting arrows and brackets, summary in a chalk-drawn box at bottom
+- **Visuals:** Chalk-style diagrams (flowcharts, Venn diagrams, graphs, brackets), circled key terms, eraser smudges, chalk piece and eraser on the board ledge
+
+**Best for:** Lectures, technical explanations, academic topics, step-by-step breakdowns.

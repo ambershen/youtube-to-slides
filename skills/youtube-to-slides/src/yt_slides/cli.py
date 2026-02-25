@@ -19,7 +19,7 @@ def generate(
     url: str = typer.Argument(..., help="YouTube video URL"),
     output_dir: Path = typer.Option(Path("./output"), "--output", "-o", help="Output directory"),
     aspect_ratio: str = typer.Option("16:9", "--ar", help="Aspect ratio (16:9, 4:3, 1:1)"),
-    style: str = typer.Option("davinci", "--style", help="Style: davinci, magazine, comic, geek"),
+    style: str = typer.Option("davinci", "--style", help="Style: davinci, magazine, comic, geek, chalkboard"),
     max_sections: int = typer.Option(0, "--max-sections", help="Max sections (0=unlimited)"),
     gemini_key: str = typer.Option(None, "--gemini-key", envvar="GEMINI_API_KEY"),
     youtube_key: str = typer.Option(None, "--youtube-key", envvar="YOUTUBE_API_KEY"),

@@ -2,7 +2,7 @@
 
 Convert YouTube videos into infographic slides using Gemini AI. Extracts the transcript, segments it into sections, summarizes each, and generates stylized infographic images.
 
-4 visual styles: **davinci**, **magazine**, **comic**, **geek**
+5 visual styles: **davinci**, **magazine**, **comic**, **geek**, **chalkboard**
 
 ![davinci](output/style_samples/sample_davinci.png)
 ![magazine](output/style_samples/sample_magazine.png)
@@ -114,7 +114,7 @@ yt-slides "https://youtu.be/VIDEO_ID" --dry-run
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--style` | `davinci` | Style preset: `davinci`, `magazine`, `comic`, `geek` |
+| `--style` | `davinci` | Style preset: `davinci`, `magazine`, `comic`, `geek`, `chalkboard` |
 | `--max-sections` | `0` (unlimited) | Maximum number of slides to generate |
 | `--ar` | `16:9` | Aspect ratio: `16:9`, `4:3`, `1:1` |
 | `--output`, `-o` | `./output` | Output directory |
@@ -144,13 +144,16 @@ output/
 Renaissance-era scientific manuscript. Hand-drawn ink on aged parchment with anatomical diagrams and cross-hatching. Best for educational, science, and history content.
 
 ### magazine
-High-end editorial spread. Black and white with Swiss typography, razor-thin rules, and dramatic contrast. Best for business, interviews, and professional content.
+Museum editorial spread inspired by the Whitney Museum's design language. Neue Haas Grotesk typography, gallery-like white space, and bold single-color accents (deep red, electric blue, or warm ochre). Best for business, interviews, and contemporary art-forward content.
 
 ### comic
 Vibrant pop art. Bold outlines, Ben-Day dots, speech bubbles, and starburst shapes. Best for entertainment, tutorials, and casual content.
 
 ### geek
 College bulletin board. Corkboard background with sticky notes, marker text, doodles, and red string connections. Best for study notes, brainstorming, and informal content.
+
+### chalkboard
+Classic classroom chalkboard. Chalk on dark green slate with pastel chalk accents, handwritten lettering, diagrams, and eraser smudges. Best for lectures, technical explanations, and academic topics.
 
 ## Troubleshooting
 
