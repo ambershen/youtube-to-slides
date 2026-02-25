@@ -11,26 +11,23 @@ VENV_DIR="$PROJ_DIR/.venv"
 echo "=== youtube-to-slides setup ==="
 echo "Project directory: $PROJ_DIR"
 
-# Step 1: Find a suitable Python (3.9+)
-PYTHON=""
-for candidate in python3.13 python3.12 python3.11 python3.10 python3.9 python3; do
-    if command -v "$candidate" &>/dev/null; then
-        version=$("$candidate" -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>/dev/null || true)
-        major=$(echo "$version" | cut -d. -f1)
-        minor=$(echo "$version" | cut -d. -f2)
-        if [ "$major" -ge 3 ] && [ "$minor" -ge 9 ] 2>/dev/null; then
-            PYTHON="$candidate"
-            echo "Found Python $version at $(command -v "$candidate")"
-            break
-        fi
-    fi
-done
+# Step 1: Find Python 3.9+
+PYTHON="$(command -v python3 || true)"
 
 if [ -z "$PYTHON" ]; then
-    echo "ERROR: Python 3.9+ is required but not found."
+    echo "ERROR: python3 is not installed."
     echo "Install Python from https://www.python.org/downloads/"
     exit 1
 fi
+
+PYTHON_VERSION="$("$PYTHON" -c 'import sys; print(sys.version_info.minor)')"
+if [ "$PYTHON_VERSION" -lt 9 ] 2>/dev/null; then
+    echo "ERROR: Python 3.9+ is required (found 3.$PYTHON_VERSION)."
+    echo "Install a newer version from https://www.python.org/downloads/"
+    exit 1
+fi
+
+echo "Found $("$PYTHON" --version) at $PYTHON"
 
 # Step 2: Create virtual environment if missing
 if [ ! -d "$VENV_DIR" ]; then
