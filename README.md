@@ -9,43 +9,92 @@ Convert YouTube videos into infographic slides using Gemini AI. Extracts the tra
 ![comic](output/style_samples/sample_comic.png)
 ![geek](output/style_samples/sample_geek.png)
 
-## Prerequisites
+## Compatibility
 
-- Python 3.9+
-- [Gemini API key](https://aistudio.google.com/apikey)
-- [YouTube Data API key](https://console.cloud.google.com/apis/library/youtube.googleapis.com)
+This is an [Agent Skill](https://agentskills.io/specification) — it works with any agent that supports the open Agent Skills standard:
 
-## Setup
+- [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview)
+- [Cursor](https://cursor.com/docs/context/skills)
+- [TRAE](https://trae.ai/)
+- [VS Code (GitHub Copilot)](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
+- And any other agent that supports [Agent Skills](https://skills.sh/)
+
+## Install
 
 ```bash
-# Clone the repo
-git clone https://github.com/ambershen/youtube-to-slides.git
-cd youtube-to-slides/skills/youtube-to-slides
+npx skills add ambershen/youtube-to-slides
+```
 
-# Option A: Use the setup script (recommended)
-bash scripts/setup.sh
+That's it. The [skills CLI](https://skills.sh/docs/cli) downloads the skill and configures it for your agent.
 
-# Option B: Manual setup
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
+After installing, run the setup script to create the virtual environment and install Python dependencies:
 
-# Configure API keys
+```bash
+bash skills/youtube-to-slides/scripts/setup.sh
+```
+
+## Get Your API Keys
+
+This skill requires two API keys. Both are free.
+
+### 1. Gemini API Key (for image generation)
+
+The Gemini API uses the [Nano Banana](https://www.aifreeapi.com/en/posts/nano-banana-api-free) model for image generation. The free tier works without a credit card.
+
+1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
+2. Sign in with your Google account
+3. Click **Create API Key**
+4. Copy the key
+
+### 2. YouTube Data API Key (for video metadata & transcripts)
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project (or select an existing one)
+3. Go to **APIs & Services > Library**
+4. Search for **YouTube Data API v3** and click **Enable**
+5. Go to **APIs & Services > Credentials**
+6. Click **Create Credentials > API Key**
+7. Copy the key
+
+For a detailed walkthrough, see the [YouTube Data API getting started guide](https://developers.google.com/youtube/v3/getting-started).
+
+### Configure Your Keys
+
+Create a `.env` file in the skill directory:
+
+```bash
+cd skills/youtube-to-slides
 cp .env.example .env
-# Edit .env and add your keys:
-#   GEMINI_API_KEY=your_key
-#   YOUTUBE_API_KEY=your_key
+```
+
+Edit `.env` and add your keys:
+
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+YOUTUBE_API_KEY=your_youtube_data_api_key_here
 ```
 
 ## Usage
 
-### CLI
+### With Your Agent (Recommended)
+
+Just ask naturally in any supported agent:
+
+> Generate slides from https://youtu.be/VIDEO_ID in comic style
+
+> Convert this YouTube video to slides: https://youtube.com/watch?v=VIDEO_ID
+
+> Make magazine-style infographics from https://youtu.be/VIDEO_ID with 5 slides
+
+The agent will run the pipeline and present the results.
+
+### CLI (Direct)
 
 ```bash
 cd skills/youtube-to-slides
 source .venv/bin/activate
 
-# Basic — generates slides in davinci style
+# Basic — davinci style
 yt-slides "https://youtu.be/VIDEO_ID"
 
 # Choose a style
@@ -57,7 +106,7 @@ yt-slides "https://youtu.be/VIDEO_ID" --style magazine --max-sections 5
 # Change aspect ratio (default: 16:9)
 yt-slides "https://youtu.be/VIDEO_ID" --ar 1:1
 
-# Dry run — shows prompts without generating images
+# Dry run — preview prompts without generating images
 yt-slides "https://youtu.be/VIDEO_ID" --dry-run
 ```
 
@@ -72,14 +121,6 @@ yt-slides "https://youtu.be/VIDEO_ID" --dry-run
 | `--dry-run` | off | Preview prompts without generating images |
 | `--gemini-key` | from `.env` | Gemini API key (overrides env) |
 | `--youtube-key` | from `.env` | YouTube API key (overrides env) |
-
-### Claude Code Integration
-
-This repo includes a Claude Code agent skill. When you open the project in Claude Code, just ask naturally:
-
-> Generate slides from https://youtu.be/VIDEO_ID in comic style
-
-Claude will run the pipeline and show you the results. No slash commands needed.
 
 ## Output
 
@@ -111,39 +152,6 @@ Vibrant pop art. Bold outlines, Ben-Day dots, speech bubbles, and starburst shap
 ### geek
 College bulletin board. Corkboard background with sticky notes, marker text, doodles, and red string connections. Best for study notes, brainstorming, and informal content.
 
-## Project Structure
-
-```
-skills/youtube-to-slides/
-├── SKILL.md                        # Agent skill definition
-├── .env.example                    # API key template
-├── pyproject.toml                  # Python package config
-├── scripts/
-│   ├── setup.sh                    # One-time setup (venv + install)
-│   ├── run.sh                      # CLI wrapper
-│   └── check-env.sh               # Pre-flight validation
-├── references/
-│   ├── STYLES.md                   # Style preset documentation
-│   └── TROUBLESHOOTING.md          # Common errors + fixes
-└── src/yt_slides/
-    ├── cli.py                      # Typer CLI entry point
-    ├── config.py                   # Settings (API keys, defaults)
-    ├── models.py                   # Pydantic data models
-    ├── pipeline.py                 # Main orchestration pipeline
-    ├── ai/
-    │   ├── gemini_client.py        # Gemini API wrapper
-    │   ├── prompt_builder.py       # Style presets & prompt generation
-    │   ├── segmenter.py            # Transcript → sections
-    │   └── summarizer.py           # Section → summary
-    ├── image/
-    │   └── generator.py            # Image generation via Gemini
-    └── youtube/
-        ├── chapters.py             # YouTube chapter extraction
-        ├── metadata.py             # Video metadata fetching
-        ├── transcript.py           # Transcript extraction
-        └── url_parser.py           # URL parsing & validation
-```
-
 ## Troubleshooting
 
 | Problem | Fix |
@@ -152,7 +160,9 @@ skills/youtube-to-slides/
 | No transcript available | Video needs captions enabled (auto-generated or manual) |
 | Invalid URL | Use `youtu.be/ID` or `youtube.com/watch?v=ID` format |
 | API key errors | Check your `.env` file has valid keys |
-| `yt-slides` not found | Run `bash scripts/setup.sh` inside the skill directory |
+| `yt-slides` not found | Run `bash skills/youtube-to-slides/scripts/setup.sh` |
+
+See [TROUBLESHOOTING.md](skills/youtube-to-slides/references/TROUBLESHOOTING.md) for more details.
 
 ## License
 
