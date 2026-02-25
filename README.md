@@ -2,13 +2,15 @@
 
 Convert YouTube videos into infographic slides using Gemini AI. Extracts the transcript, segments it into sections, summarizes each, and generates stylized infographic images.
 
-5 visual styles: **davinci**, **magazine**, **comic**, **geek**, **chalkboard**
+7 visual styles: **davinci**, **magazine**, **comic**, **geek**, **chalkboard**, **collage**, **newspaper**
 
 ![davinci](output/style_samples/sample_davinci.png)
 ![magazine](output/style_samples/sample_magazine.png)
 ![comic](output/style_samples/sample_comic.png)
 ![geek](output/style_samples/sample_geek.png)
 ![chalkboard](output/style_samples/sample_chalkboard.png)
+![collage](output/style_samples/sample_collage.png)
+![newspaper](output/style_samples/sample_newspaper.png)
 
 ## Compatibility
 
@@ -115,7 +117,7 @@ yt-slides "https://youtu.be/VIDEO_ID" --dry-run
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--style` | `davinci` | Style preset: `davinci`, `magazine`, `comic`, `geek`, `chalkboard` |
+| `--style` | `davinci` | Style preset: `davinci`, `magazine`, `comic`, `geek`, `chalkboard`, `collage`, `newspaper` |
 | `--max-sections` | `0` (unlimited) | Maximum number of slides to generate |
 | `--ar` | `16:9` | Aspect ratio: `16:9`, `4:3`, `1:1` |
 | `--output`, `-o` | `./output` | Output directory |
@@ -145,7 +147,7 @@ output/
 Renaissance-era scientific manuscript. Hand-drawn ink on aged parchment with anatomical diagrams and cross-hatching. Best for educational, science, and history content.
 
 ### magazine
-Museum editorial spread inspired by the Whitney Museum's design language. Neue Haas Grotesk typography, gallery-like white space, and bold single-color accents (deep red, electric blue, or warm ochre). Best for business, interviews, and contemporary art-forward content.
+Fashion editorial magazine spread. Big dramatic headlines, asymmetrical layouts mixing photography and text, styled pull quotes, and drop caps. Inspired by Vogue and Harper's Bazaar. Best for business, interviews, and visually luxurious content.
 
 ### comic
 Vibrant pop art. Bold outlines, Ben-Day dots, speech bubbles, and starburst shapes. Best for entertainment, tutorials, and casual content.
@@ -154,7 +156,13 @@ Vibrant pop art. Bold outlines, Ben-Day dots, speech bubbles, and starburst shap
 College bulletin board. Corkboard background with sticky notes, marker text, doodles, and red string connections. Best for study notes, brainstorming, and informal content.
 
 ### chalkboard
-Classic classroom chalkboard. Chalk on dark green slate with pastel chalk accents, handwritten lettering, diagrams, and eraser smudges. Best for lectures, technical explanations, and academic topics.
+Real black classroom chalkboard. All text handwritten in chalk on matte black slate with a worn wooden frame, natural hand-pressure variation, and faint ghosting of erased content. Best for lectures, technical explanations, and academic topics.
+
+### collage
+Dreamcore ASCII collage. All text handwritten. Surreal mixed-media layering ASCII art, handwritten scrawls, cut-out imagery, and glitched pastel gradients on varied backgrounds. Best for tech/internet culture, creative essays, and experimental content.
+
+### newspaper
+Vintage newspaper broadsheet. Crisp black and white — bold serif headlines, multi-column layouts, and engraving-style illustrations on clean white newsprint. Best for history, journalism, and authoritative presentations.
 
 ## Troubleshooting
 

@@ -32,31 +32,32 @@ STYLE_PRESETS: dict[str, dict[str, str]] = {
     },
     "magazine": {
         "description": (
-            "High-end museum editorial spread inspired by the Whitney Museum of American Art website. "
-            "Neue Haas Grotesk / Helvetica-style sans-serif typography with extreme size contrast between headline and body. "
-            "Clean, gallery-like design where content is treated as art. "
-            "Generous negative space and precise grid alignment. Razor-thin hairline rules separating sections. "
-            "Bold color accents punctuate a predominantly white canvas — like an exhibition catalog. "
-            "The design breathes sophistication, curatorial authority, and contemporary art-world elegance."
+            "Fashion editorial magazine spread — the kind of page you'd find in Vogue, Harper's Bazaar, or W Magazine. "
+            "Big, dramatic headlines in bold condensed or elegant serif type with extreme size contrast. "
+            "Asymmetrical layout that mixes photography, text blocks, and pull quotes in an artful, deliberately "
+            "off-balance composition. Every element is placed with editorial intention. "
+            "The overall feel is high-fashion, confident, and visually luxurious — a spread you'd tear out and pin on your wall."
         ),
         "colors": (
-            "Predominantly white background with rich black typography. "
-            "One bold accent color per slide — deep museum red, electric blue, or warm ochre — used sparingly "
-            "for a single typographic element, a geometric shape, or a section divider. "
-            "Subtle warm gray tones for secondary text. High contrast but not strictly monochrome."
+            "Sophisticated palette — either stark black and white with a single pop color (crimson red, electric pink, "
+            "or gold), or a rich tonal palette (deep burgundy, cream, and charcoal). "
+            "Large photographic or illustrated imagery dominates with text overlaid or wrapping around it. "
+            "Generous use of white space as a design element. Accent color used for drop caps, pull quotes, or a single bold word."
         ),
         "layout": (
-            "Grid-based editorial layout with strong vertical and horizontal alignment. "
-            "Oversized bold headline dominates the top third, potentially with a single accent color word. "
-            "Key points set in a clean single-column or asymmetric two-column layout with generous line spacing. "
-            "Pull-quote style for the context text — large quotation marks, indented block. "
-            "Thin hairline rules separate each section. Slide number in a minimal bottom corner badge."
+            "Asymmetrical editorial spread. An oversized headline — bold, condensed, and dramatic — anchors the page, "
+            "potentially spanning the full width or set at an angle. "
+            "Key points arranged in an elegant column alongside or overlapping a large feature image or illustration. "
+            "A styled pull quote in large italic or serif type breaks the layout with quotation marks as design elements. "
+            "Summary text set in a refined body font in a narrow column. "
+            "Slide number styled as a small folio marker. Mixed type sizes and weights create visual rhythm."
         ),
         "visual_direction": (
-            "Use bold geometric shapes — circles, lines, rectangles — as compositional color accents, not decoration. "
-            "A single large-scale abstract form can anchor the composition like a gallery installation. "
-            "Let typography and whitespace do the heavy lifting. "
-            "If imagery is needed, use flat graphic silhouettes or high-contrast halftone patterns in the accent color."
+            "Include a large editorial-style image or illustration as the visual anchor — a stylized portrait, "
+            "an abstract fashion photograph, or a bold graphic composition that relates to the content. "
+            "Text wraps around or overlays imagery with confidence. Use drop caps for the first letter of key sections. "
+            "Pull quotes are set large and dramatic with thin rule lines above and below. "
+            "The composition should feel like an actual magazine page — layered, intentional, and effortlessly stylish."
         ),
     },
     "comic": {
@@ -117,32 +118,115 @@ STYLE_PRESETS: dict[str, dict[str, str]] = {
     },
     "chalkboard": {
         "description": (
-            "Classic classroom chalkboard infographic. Content is drawn in chalk on a dark green or "
-            "dark slate chalkboard surface with realistic chalk texture — dusty, slightly uneven strokes. "
-            "Handwritten chalk lettering for all text with natural imperfections. "
-            "Diagrams, arrows, and underlines feel like a brilliant professor's lecture notes. "
-            "Chalk dust smudges and eraser marks add authenticity. "
-            "The feel is academic, authoritative, and nostalgic — like the best lecture you ever attended."
+            "Photograph of a real black chalkboard in a classroom. The board is a true matte black surface "
+            "with a worn wooden frame, mounted on a wall under fluorescent lighting. "
+            "ALL text is handwritten in chalk — loose, natural, human handwriting with personality. "
+            "Authentic hand pressure variation: thick downstrokes, thin upstrokes, chalk skipping on rough slate. "
+            "The overall image should look like a photo you'd take of a lecture hall blackboard after "
+            "an incredible class, not a digital illustration styled to look like chalk."
         ),
         "colors": (
-            "Dark green or dark slate chalkboard background. White chalk for primary text and diagrams. "
-            "Pastel chalk accents — soft yellow, pale blue, pink, and peach — for highlights, "
-            "underlines, and callout boxes. Subtle chalk dust haze around text edges."
+            "True black chalkboard surface — not green, not dark gray, but the deep matte black of a "
+            "well-used classroom blackboard. White chalk is the dominant writing color, with natural "
+            "brightness variation where the chalk was pressed harder or lighter. "
+            "Occasional use of yellow or pale blue chalk for underlines or circled terms, but sparingly — "
+            "most real classrooms only have white chalk. Faint ghosting of previously erased content "
+            "visible as gray smudges on the black surface."
         ),
         "layout": (
-            "Structured but hand-drawn lecture layout. Title in large, bold chalk letters across the top, "
-            "underlined with a slightly wavy chalk line. "
-            "Key points arranged with chalk bullet markers or numbered with circled digits. "
-            "Connecting arrows and bracket annotations between related ideas. "
-            "Summary in a chalk-drawn rounded rectangle or banner at the bottom. "
-            "Slide number written in the bottom corner as if casually added by the professor."
+            "Organic lecture-notes layout that fills the board naturally. Title handwritten large across the "
+            "top in firm chalk strokes, underlined once. "
+            "Key points flow down the board in handwritten chalk — bullet dashes or numbered lists, slightly "
+            "drifting from left to right as a real hand would. "
+            "Arrows and lines connect related ideas. A boxed summary near the bottom, also handwritten. "
+            "Slide number tucked into the bottom-right corner in casual handwriting. "
+            "The wooden chalk tray at the bottom edge of the board is visible with a few chalk stubs "
+            "and a felt eraser resting on it."
         ),
         "visual_direction": (
-            "Draw chalk-style diagrams: flowcharts, Venn diagrams, simple graphs, arrows, brackets, "
-            "stick figures at a podium, lightbulb moments, and equation-like notation. "
-            "Include chalk underlines and circles around key terms for emphasis. "
-            "Some areas have faint eraser smudges where content was revised. "
-            "A chalk piece and eraser resting on the ledge at the bottom of the board."
+            "ALL text — title, bullet points, summary, labels — must be in handwritten chalk style. "
+            "No typed, printed, or digital-looking fonts anywhere. Every letter looks written by a human hand "
+            "holding a piece of chalk, with natural inconsistencies in size, spacing, and slant. "
+            "Chalk lines have grain texture from the rough slate — not smooth vector strokes. "
+            "Diagrams are simple and hand-drawn: boxes, arrows, circles, underlines, brackets. "
+            "Some areas show eraser smudges where the board was wiped imperfectly. "
+            "Fine chalk dust is visible near the tray. The board has subtle wear patterns and faint "
+            "scratches from years of use. No digital effects, glow, or neon — just real chalk on real slate."
+        ),
+    },
+    "collage": {
+        "description": (
+            "Digital collage with dreamcore and ASCII aesthetics. A surreal mixed-media composition that "
+            "layers ASCII art text blocks, handwritten scrawls, cut-out imagery, and glitched gradients. "
+            "ALL text is rendered in a loose handwritten style — scratchy, uneven, like someone writing "
+            "with a marker on scraps of paper or directly onto the collage surface. "
+            "The vibe is late-night internet, liminal spaces, and analog-digital fusion — "
+            "like a zine made by an insomniac programmer in a half-dream state. "
+            "The overall mood is hypnotic, slightly eerie, and deeply aesthetic."
+        ),
+        "colors": (
+            "Background varies freely — can be light, dark, pastel, or mixed. Options include: washed-out "
+            "cream with noise grain, soft pink-lavender gradient, deep navy, pale sky blue, or layered "
+            "collage textures with no single dominant tone. "
+            "Terminal green (#00FF00) and phosphor amber (#FFB000) appear as accent elements in ASCII art fragments. "
+            "Soft pastel washes — lavender, baby pink, pale cyan — bleed through as dreamcore gradients. "
+            "Harsh white or black for handwritten text overlays depending on background. "
+            "Occasional glitch streaks of magenta or cyan."
+        ),
+        "layout": (
+            "Deliberately fragmented collage layout. Title handwritten large and loose — scrawled in marker "
+            "or pen style, placed off-center or at a slight angle. "
+            "Key points appear as handwritten snippets on torn paper scraps, translucent overlays, or "
+            "directly onto the collage surface at slight rotations. Some have ASCII box-drawing borders "
+            "(using ┌─┐│└─┘ characters) around them for contrast. "
+            "Summary text handwritten in a terminal-inspired block or on a scrap of lined paper. "
+            "Elements overlap and layer at different depths. "
+            "Slide number scrawled small in the margin."
+        ),
+        "visual_direction": (
+            "ALL text must be in a handwritten style — messy, human, with natural variation in size and slant. "
+            "No clean digital typography anywhere. The handwriting mixes with ASCII art patterns "
+            "(box-drawing frames, simple ASCII illustrations, code-like text blocks). "
+            "Layer dreamy photographic cutouts of empty hallways, clouds, windows, or geometric shapes. "
+            "Apply subtle scanline or CRT screen texture over portions of the image. "
+            "Include small visual fragments: a staircase going nowhere, a pixelated eye, a wireframe sphere. "
+            "The composition should feel like a curated mood board from a parallel internet, "
+            "assembled by hand with scissors and glue."
+        ),
+    },
+    "newspaper": {
+        "description": (
+            "Vintage newspaper broadsheet from the early 20th century. Black and white print with the "
+            "authoritative gravitas of The New York Times or The Times of London circa 1920s-1940s. "
+            "Bold serif headlines in large point sizes, dense multi-column text layouts, and detailed "
+            "engraving-style illustrations. The paper has a slightly aged, yellowed quality with visible "
+            "print texture and ink density variation. "
+            "The feel is historic, weighty, and credible — like front-page news from another era."
+        ),
+        "colors": (
+            "Strictly black ink on clean white paper. No color, no yellowing, no sepia, no warm tint. "
+            "Pure black and white like a freshly printed broadsheet newspaper. "
+            "Rich dense blacks for headlines and engraving illustrations. Medium gray for body text. "
+            "Clean white paper background — bright and crisp, not aged or yellowed. "
+            "Variation in ink density gives depth: bold blacks for headlines, lighter grays for fine engraving detail."
+        ),
+        "layout": (
+            "Traditional newspaper column layout. A bold, large serif headline spans the full width at top, "
+            "possibly with a secondary deck headline in smaller type below it. "
+            "Content arranged in 2-3 justified columns with thin vertical rules between them. "
+            "Key points set as body text paragraphs or as indented sub-sections with bold lead-ins. "
+            "An engraving-style illustration anchors one column or spans two. "
+            "Summary set as a pull quote or boxed sidebar with a thin border rule. "
+            "Slide number styled as a page/edition number in the header or footer alongside a date line."
+        ),
+        "visual_direction": (
+            "Include detailed engraving-style illustrations — crosshatched portraits, technical diagrams, "
+            "architectural views, or allegorical figures rendered in fine black ink lines. "
+            "These should look like woodcut or steel-plate engravings reproduced on newsprint. "
+            "Use bold serif typography throughout — thick/thin stroke contrast, classic Roman letterforms. "
+            "Headlines are big, black, and commanding. Thin hairline rules separate sections. "
+            "The overall page should feel like an actual broadsheet newspaper front page: dense with "
+            "information, visually structured by typography and column grids, and illustrated with engravings."
         ),
     },
 }

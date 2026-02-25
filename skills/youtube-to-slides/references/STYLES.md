@@ -1,6 +1,6 @@
 # Style Presets
 
-youtube-to-slides supports 5 visual styles for infographic generation. Each produces a distinctly different aesthetic.
+youtube-to-slides supports 7 visual styles for infographic generation. Each produces a distinctly different aesthetic.
 
 ## davinci (default)
 
@@ -18,15 +18,15 @@ Hand-drawn ink illustrations on aged parchment, reminiscent of Leonardo da Vinci
 
 ## magazine
 
-**Museum editorial spread**
+**Fashion editorial magazine spread**
 
-Inspired by the Whitney Museum of American Art's design language — Neue Haas Grotesk typography, gallery-like white space, and bold single-color accents. Clean, curatorial, and contemporary.
+High-fashion editorial spread inspired by Vogue, Harper's Bazaar, and W Magazine. Big dramatic headlines with extreme size contrast, asymmetrical layouts mixing photography and text, styled pull quotes, and drop caps. Confident, luxurious, and visually striking.
 
-- **Colors:** Predominantly white with rich black typography; one bold accent color per slide (deep red, electric blue, or warm ochre) used sparingly for emphasis
-- **Layout:** Grid-based editorial layout, oversized bold headline with optional accent color word, generous line spacing, pull-quote style, thin hairline rules
-- **Visuals:** Bold geometric shapes as compositional color accents, flat graphic silhouettes, typography and whitespace as primary design elements
+- **Colors:** Sophisticated palette — stark black and white with a single pop color (crimson, electric pink, or gold), or rich tonal range (burgundy, cream, charcoal). Generous white space as a design element
+- **Layout:** Asymmetrical editorial spread with oversized condensed headline, key points in elegant columns alongside feature imagery, dramatic pull quotes in large italic/serif type, mixed type sizes creating visual rhythm
+- **Visuals:** Large editorial-style images or illustrations as visual anchors, text wrapping around imagery, drop caps, thin rule lines framing pull quotes, layered and intentional composition like an actual magazine page
 
-**Best for:** Business topics, interviews, professional content, contemporary and art-forward aesthetic.
+**Best for:** Business topics, interviews, fashion/lifestyle content, professional and visually luxurious presentations.
 
 ---
 
@@ -60,12 +60,40 @@ Kraft paper and corkboard background with a mix of handwritten marker text, type
 
 ## chalkboard
 
-**Classic classroom chalkboard**
+**Real black classroom chalkboard**
 
-Chalk on a dark green slate board with realistic chalk texture — dusty, slightly uneven strokes. Handwritten chalk lettering, diagrams, and annotations like a brilliant professor's lecture notes.
+A photograph-realistic black chalkboard with a worn wooden frame. ALL text is handwritten in chalk — loose, natural human handwriting with personality. Real chalk with authentic hand pressure — thick downstrokes, thin upstrokes, chalk skipping on rough slate. Looks like a photo of a lecture hall blackboard after an incredible class.
 
-- **Colors:** Dark green/slate background, white chalk for primary text, pastel chalk accents (soft yellow, pale blue, pink, peach) for highlights and callouts
-- **Layout:** Lecture-style layout with bold chalk title and wavy underline at top, numbered or bulleted key points, connecting arrows and brackets, summary in a chalk-drawn box at bottom
-- **Visuals:** Chalk-style diagrams (flowcharts, Venn diagrams, graphs, brackets), circled key terms, eraser smudges, chalk piece and eraser on the board ledge
+- **Colors:** True matte black surface (not green), white chalk with natural brightness variation, occasional yellow or pale blue chalk used sparingly, faint ghosting of previously erased content
+- **Layout:** Organic lecture-notes layout filling the board naturally, title handwritten large at top with underline, handwritten numbered or bulleted key points drifting slightly, boxed summary near bottom, wooden chalk tray visible at bottom edge
+- **Visuals:** ALL text in handwritten chalk style — no typed or digital fonts. Physically realistic chalk on slate with grain texture, eraser smudges, fine chalk dust, subtle board wear and scratches
 
 **Best for:** Lectures, technical explanations, academic topics, step-by-step breakdowns.
+
+---
+
+## collage
+
+**Dreamcore ASCII collage**
+
+Surreal mixed-media digital collage layering ASCII art, handwritten scrawls, cut-out imagery, and glitched gradients. ALL text is handwritten — scratchy, uneven, like someone writing with a marker on scraps of paper. Background varies freely (light, dark, pastel, or mixed). Late-night internet meets liminal spaces — like a zine made by an insomniac programmer in a half-dream state.
+
+- **Colors:** Varied backgrounds (washed-out cream, pastel gradients, deep navy, pale sky blue, or mixed collage textures), terminal green and phosphor amber as accent elements in ASCII fragments, soft pastel dreamcore washes, harsh handwritten text overlays, occasional magenta/cyan glitch streaks
+- **Layout:** Deliberately fragmented collage — title handwritten large and loose off-center, key points as handwritten snippets on torn paper scraps with ASCII box-drawing borders, summary handwritten in a terminal-inspired block, overlapping layers at different depths
+- **Visuals:** ALL text in handwritten style — no clean digital typography. ASCII box-drawing frames mixed with handwriting, dreamy photographic cutouts (empty hallways, clouds, geometric shapes), CRT scanline texture, small surreal fragments (staircase to nowhere, pixelated eye, wireframe sphere)
+
+**Best for:** Tech/internet culture, creative essays, mood-driven content, experimental or artistic topics.
+
+---
+
+## newspaper
+
+**Vintage newspaper broadsheet**
+
+Crisp black and white newspaper from the early 20th century. Bold serif headlines, dense multi-column layouts, and detailed engraving-style illustrations on clean white newsprint. The gravitas of The New York Times circa 1920s-1940s.
+
+- **Colors:** Strictly black ink on clean white paper — no color, no yellowing, no sepia tint. Rich dense blacks for headlines, medium gray for body text, pure white background
+- **Layout:** Traditional newspaper column layout with bold full-width serif headline, secondary deck headline, 2-3 justified columns with thin vertical rules, engraving illustration anchoring one column, boxed pull quote or sidebar, page/edition number in header
+- **Visuals:** Detailed engraving-style illustrations (crosshatched portraits, technical diagrams, architectural views) resembling woodcut or steel-plate prints, bold serif typography with thick/thin stroke contrast, thin hairline rules, dense information-rich composition
+
+**Best for:** History, journalism, serious analysis, authoritative and classic presentations.

@@ -3,8 +3,8 @@ name: youtube-to-slides
 description: >
   Convert a YouTube video into infographic slides. Extracts transcript, segments
   into sections, summarizes, and generates stylized infographic images using Gemini AI.
-  5 styles: davinci, magazine, comic, geek, chalkboard. Use when user wants slide summaries from YouTube.
-argument-hint: "<youtube-url> [--style davinci|magazine|comic|geek|chalkboard] [--max-sections N]"
+  7 styles: davinci, magazine, comic, geek, chalkboard, collage, newspaper. Use when user wants slide summaries from YouTube.
+argument-hint: "<youtube-url> [--style davinci|magazine|comic|geek|chalkboard|collage|newspaper] [--max-sections N]"
 allowed-tools: Bash, Read, Write, Glob
 context: fork
 ---
@@ -36,6 +36,8 @@ Users can invoke this skill with natural language. Here are examples of what the
 - "Comic book style please" → `--style comic`
 - "Geek / bulletin board style" → `--style geek`
 - "Chalkboard style" → `--style chalkboard`
+- "Collage / dreamcore style" → `--style collage`
+- "Newspaper style" → `--style newspaper`
 
 **Control slide count:**
 - "Just give me 4 slides" → `--max-sections 4`
@@ -50,7 +52,7 @@ Users can invoke this skill with natural language. Here are examples of what the
 Parse `$ARGUMENTS` to extract:
 
 - **url** (required) — YouTube video URL. Supports formats: `https://youtu.be/ID`, `https://www.youtube.com/watch?v=ID`, `https://youtube.com/watch?v=ID`
-- **--style** (optional, default: `davinci`) — One of: `davinci`, `magazine`, `comic`, `geek`, `chalkboard`
+- **--style** (optional, default: `davinci`) — One of: `davinci`, `magazine`, `comic`, `geek`, `chalkboard`, `collage`, `newspaper`
 - **--max-sections** (optional, default: `8`) — Maximum number of slide sections to generate. Use `0` for unlimited.
 - **--dry-run** (optional) — Show prompts without generating images
 - **--ar** (optional, default: `16:9`) — Aspect ratio: `16:9`, `4:3`, or `1:1`
