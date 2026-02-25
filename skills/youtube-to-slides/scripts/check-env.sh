@@ -5,7 +5,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJ_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+PROJ_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 VENV_DIR="$PROJ_DIR/.venv"
 
 errors=()

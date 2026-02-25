@@ -19,10 +19,13 @@ Convert YouTube videos into infographic slides using Gemini AI. Extracts the tra
 
 ```bash
 # Clone the repo
-git clone <repo-url>
-cd youtube-to-slides
+git clone https://github.com/ambershen/youtube-to-slides.git
+cd youtube-to-slides/skills/youtube-to-slides
 
-# Create virtual environment and install
+# Option A: Use the setup script (recommended)
+bash scripts/setup.sh
+
+# Option B: Manual setup
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
@@ -39,6 +42,9 @@ cp .env.example .env
 ### CLI
 
 ```bash
+cd skills/youtube-to-slides
+source .venv/bin/activate
+
 # Basic — generates slides in davinci style
 yt-slides "https://youtu.be/VIDEO_ID"
 
@@ -108,23 +114,34 @@ College bulletin board. Corkboard background with sticky notes, marker text, doo
 ## Project Structure
 
 ```
-src/yt_slides/
-├── cli.py              # Typer CLI entry point
-├── config.py           # Settings (API keys, defaults)
-├── models.py           # Pydantic data models
-├── pipeline.py         # Main orchestration pipeline
-├── ai/
-│   ├── gemini_client.py    # Gemini API wrapper
-│   ├── prompt_builder.py   # Style presets & prompt generation
-│   ├── segmenter.py        # Transcript → sections
-│   └── summarizer.py       # Section → summary
-├── image/
-│   └── generator.py        # Image generation via Gemini
-└── youtube/
-    ├── chapters.py         # YouTube chapter extraction
-    ├── metadata.py         # Video metadata fetching
-    ├── transcript.py       # Transcript extraction
-    └── url_parser.py       # URL parsing & validation
+skills/youtube-to-slides/
+├── SKILL.md                        # Agent skill definition
+├── .env.example                    # API key template
+├── pyproject.toml                  # Python package config
+├── scripts/
+│   ├── setup.sh                    # One-time setup (venv + install)
+│   ├── run.sh                      # CLI wrapper
+│   └── check-env.sh               # Pre-flight validation
+├── references/
+│   ├── STYLES.md                   # Style preset documentation
+│   └── TROUBLESHOOTING.md          # Common errors + fixes
+└── src/yt_slides/
+    ├── cli.py                      # Typer CLI entry point
+    ├── config.py                   # Settings (API keys, defaults)
+    ├── models.py                   # Pydantic data models
+    ├── pipeline.py                 # Main orchestration pipeline
+    ├── ai/
+    │   ├── gemini_client.py        # Gemini API wrapper
+    │   ├── prompt_builder.py       # Style presets & prompt generation
+    │   ├── segmenter.py            # Transcript → sections
+    │   └── summarizer.py           # Section → summary
+    ├── image/
+    │   └── generator.py            # Image generation via Gemini
+    └── youtube/
+        ├── chapters.py             # YouTube chapter extraction
+        ├── metadata.py             # Video metadata fetching
+        ├── transcript.py           # Transcript extraction
+        └── url_parser.py           # URL parsing & validation
 ```
 
 ## Troubleshooting
@@ -135,7 +152,7 @@ src/yt_slides/
 | No transcript available | Video needs captions enabled (auto-generated or manual) |
 | Invalid URL | Use `youtu.be/ID` or `youtube.com/watch?v=ID` format |
 | API key errors | Check your `.env` file has valid keys |
-| `yt-slides` not found | Run `pip install -e .` in the virtual environment |
+| `yt-slides` not found | Run `bash scripts/setup.sh` inside the skill directory |
 
 ## License
 
