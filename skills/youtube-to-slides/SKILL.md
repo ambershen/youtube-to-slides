@@ -13,6 +13,37 @@ context: fork
 
 Convert YouTube videos into beautiful infographic slide decks.
 
+## Natural Language Examples
+
+Users can invoke this skill with natural language. Here are examples of what they might say and how to handle each:
+
+**Generate slides:**
+- "Generate slides from https://youtu.be/VIDEO_ID"
+- "Convert this YouTube video to slides: https://youtube.com/watch?v=VIDEO_ID"
+- "Make infographic slides from https://youtu.be/VIDEO_ID in comic style"
+- "Create 5 magazine-style slides from https://youtu.be/VIDEO_ID"
+- "Turn this video into slides https://youtu.be/VIDEO_ID --style geek"
+
+**Choose a style:**
+- "Use the davinci style" → `--style davinci`
+- "Make it look like a magazine" → `--style magazine`
+- "Comic book style please" → `--style comic`
+- "Geek / bulletin board style" → `--style geek`
+
+**Control slide count:**
+- "Just give me 4 slides" → `--max-sections 4`
+- "Make as many slides as needed" → `--max-sections 0`
+
+**Preview without generating images:**
+- "Do a dry run first"
+- "Just show me the prompts, don't generate images yet"
+
+**Setup and troubleshooting:**
+- "Set up youtube-to-slides" → Run `setup.sh`
+- "Check if youtube-to-slides is ready" → Run `check-env.sh`
+- "I need to configure my API keys" → Guide to `.env` setup
+- "It's not working" → Run `check-env.sh`, read diagnostics, consult `references/TROUBLESHOOTING.md`
+
 ## Argument Parsing
 
 Parse `$ARGUMENTS` to extract:
@@ -39,12 +70,19 @@ bash "$SKILL_DIR/scripts/check-env.sh"
 
 - If it exits 0, proceed to Step 2.
 - If it exits non-zero, read its output for diagnostics:
-  - If the virtual environment or package is missing, run the setup script:
+  - **Missing virtual environment or package** — Run the setup script:
     ```bash
     bash "$SKILL_DIR/scripts/setup.sh"
     ```
-  - If API keys are missing, tell the user they need to configure their `.env` file in the project root with `GEMINI_API_KEY` and `YOUTUBE_API_KEY`. Link them to `references/TROUBLESHOOTING.md` for setup instructions.
-  - After fixing, re-run `check-env.sh` to confirm.
+    Then re-run `check-env.sh` to confirm.
+  - **Missing API keys** — Tell the user:
+    1. Copy the example env file: `cp "$SKILL_DIR/.env.example" "$SKILL_DIR/.env"`
+    2. Add their Gemini API key (get one free at https://aistudio.google.com/apikey)
+    3. Add their YouTube Data API key (get one at https://console.cloud.google.com/apis/credentials — enable YouTube Data API v3 first)
+    4. See `references/TROUBLESHOOTING.md` for detailed setup steps.
+  - After fixing, re-run `check-env.sh` to confirm everything passes.
+
+If the user just asks to "set up" or "install" the skill, run both `setup.sh` and `check-env.sh`, then report the result.
 
 ### Step 2: Run the Pipeline
 
@@ -56,7 +94,7 @@ bash "$SKILL_DIR/scripts/run.sh" "<url>" --style <style> --max-sections <max_sec
 
 Add `--dry-run` flag if requested.
 
-**This takes 3-5 minutes for a full run.** Inform the user that generation is in progress.
+**This takes 3-5 minutes for a full run.** Inform the user that generation is in progress and what style/settings are being used.
 
 ### Step 3: Present Results
 
@@ -69,7 +107,7 @@ After successful completion:
    - Style used
    - Number of slides generated
    - List each slide with its title and file path
-4. Tell the user they can view the slides:
+4. Show the user how to open the slides:
    ```bash
    open output/<video_id>/
    ```
@@ -81,9 +119,9 @@ If the pipeline fails, check output for common errors and consult `references/TR
 - **429 Rate Limit** — Gemini rate limit hit. The tool has built-in retry logic. If it still fails, suggest waiting 60 seconds and retrying.
 - **No transcript available** — The video may not have captions. Inform the user.
 - **Invalid URL** — Ask the user for a valid YouTube URL.
-- **API key errors** — Guide user to set up their `.env` file.
+- **API key errors** — Guide user to set up their `.env` file with valid keys.
 
 ## Variable Reference
 
-- `$SKILL_DIR` — Absolute path to this skill's directory (`.claude/skills/youtube-to-slides/`)
-- `$ARGUMENTS` — Raw argument string passed by the user after `/youtube-to-slides`
+- `$SKILL_DIR` — Absolute path to this skill's directory (`skills/youtube-to-slides/`)
+- `$ARGUMENTS` — Raw argument string passed by the user
