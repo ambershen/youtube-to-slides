@@ -8,6 +8,7 @@ Convert YouTube videos into infographic slides using Gemini AI. Extracts the tra
 ![magazine](output/style_samples/sample_magazine.png)
 ![comic](output/style_samples/sample_comic.png)
 ![geek](output/style_samples/sample_geek.png)
+![chalkboard](output/style_samples/sample_chalkboard.png)
 
 ## Compatibility
 
