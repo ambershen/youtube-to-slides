@@ -17,6 +17,12 @@ Convert YouTube videos into beautiful infographic slide decks.
 
 Users can invoke this skill with natural language. Here are examples of what they might say and how to handle each:
 
+**Setup and troubleshooting:**
+- "Set up youtube-to-slides" → Run `setup.sh`
+- "Check if youtube-to-slides is ready" → Run `check-env.sh`
+- "I need to configure my API keys" → Guide to `.env` setup
+- "It's not working" → Run `check-env.sh`, read diagnostics, consult `references/TROUBLESHOOTING.md`
+
 **Generate slides:**
 - "Generate slides from https://youtu.be/VIDEO_ID"
 - "Convert this YouTube video to slides: https://youtube.com/watch?v=VIDEO_ID"
@@ -37,12 +43,6 @@ Users can invoke this skill with natural language. Here are examples of what the
 **Preview without generating images:**
 - "Do a dry run first"
 - "Just show me the prompts, don't generate images yet"
-
-**Setup and troubleshooting:**
-- "Set up youtube-to-slides" → Run `setup.sh`
-- "Check if youtube-to-slides is ready" → Run `check-env.sh`
-- "I need to configure my API keys" → Guide to `.env` setup
-- "It's not working" → Run `check-env.sh`, read diagnostics, consult `references/TROUBLESHOOTING.md`
 
 ## Argument Parsing
 
