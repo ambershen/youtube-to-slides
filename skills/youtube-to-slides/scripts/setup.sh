@@ -69,7 +69,6 @@ if [ ! -f "$PROJ_DIR/.env" ]; then
     else
         echo "Create a .env file in $PROJ_DIR with:"
         echo "  GEMINI_API_KEY=your_key_here"
-        echo "  YOUTUBE_API_KEY=your_key_here"
     fi
 fi
 

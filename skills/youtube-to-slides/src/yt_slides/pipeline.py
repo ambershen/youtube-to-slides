@@ -61,7 +61,7 @@ def run_pipeline(
 
         # Step 2: Fetch metadata
         task = progress.add_task("[cyan]Fetching video metadata...", total=None)
-        metadata = fetch_metadata(video_id, settings.youtube_api_key)
+        metadata = fetch_metadata(video_id)
         console.print(f"  Title: [bold]{metadata.title}[/bold]")
         console.print(f"  Duration: {metadata.duration_seconds // 60}m {metadata.duration_seconds % 60}s")
         progress.remove_task(task)

@@ -78,12 +78,11 @@ bash "$SKILL_DIR/scripts/check-env.sh"
     bash "$SKILL_DIR/scripts/setup.sh"
     ```
     Then re-run `check-env.sh` to confirm.
-  - **Missing API keys** — Tell the user:
+  - **Missing API key** — Tell the user:
     1. Copy the example env file: `cp "$SKILL_DIR/.env.example" "$SKILL_DIR/.env"`
     2. Add their Gemini API key (get one free at https://aistudio.google.com/apikey)
-    3. Add their YouTube Data API key (get one at https://console.cloud.google.com/apis/credentials — enable YouTube Data API v3 first)
-    4. See `references/TROUBLESHOOTING.md` for detailed setup steps.
-    - **Note:** The `.env` file is gitignored and stays local. Keys are only sent to their respective Google APIs (Gemini, YouTube Data API v3) and are never logged or transmitted elsewhere.
+    3. See `references/TROUBLESHOOTING.md` for detailed setup steps.
+    - **Note:** The `.env` file is gitignored and stays local. The key is only sent to the Google Gemini API over HTTPS and is never logged or transmitted elsewhere.
   - After fixing, re-run `check-env.sh` to confirm everything passes.
 
 If the user just asks to "set up" or "install" the skill, run both `setup.sh` and `check-env.sh`, then report the result.
@@ -127,9 +126,10 @@ If the pipeline fails, check output for common errors and consult `references/TR
 
 ## Security
 
-- **API keys** are stored in a local `.env` file that is gitignored. They are only sent to their respective Google APIs (Gemini for image generation, YouTube Data API v3 for metadata/transcripts) over HTTPS. Keys are never logged, printed, or transmitted to any other endpoint.
+- **API key** (Gemini only) is stored in a local `.env` file that is gitignored. It is only sent to the Google Gemini API over HTTPS for AI summarization and image generation. The key is never logged, printed, or transmitted to any other endpoint.
+- **Video metadata** is fetched via yt-dlp, which scrapes public YouTube pages directly — no API key required.
 - **Scripts** (`setup.sh`, `check-env.sh`, `run.sh`) are local shell scripts within this skill directory. They do not download or execute remote code. `setup.sh` creates a Python virtual environment and installs the local package. `run.sh` loads the `.env` file and invokes the `yt-slides` CLI. `check-env.sh` verifies the environment is configured.
-- **Network calls** are limited to: Google Gemini API (image generation), YouTube Data API v3 (video metadata and transcripts), and PyPI (only during `setup.sh` for dependency installation).
+- **Network calls** are limited to: Google Gemini API (AI summarization and image generation), YouTube (video metadata via yt-dlp, transcripts), and PyPI (only during `setup.sh` for dependency installation).
 
 ## Variable Reference
 

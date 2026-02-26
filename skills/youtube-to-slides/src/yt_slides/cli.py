@@ -22,7 +22,6 @@ def generate(
     style: str = typer.Option("davinci", "--style", help="Style: davinci, magazine, comic, geek, chalkboard, collage, newspaper"),
     max_sections: int = typer.Option(0, "--max-sections", help="Max sections (0=unlimited)"),
     gemini_key: str = typer.Option(None, "--gemini-key", envvar="GEMINI_API_KEY"),
-    youtube_key: str = typer.Option(None, "--youtube-key", envvar="YOUTUBE_API_KEY"),
     dry_run: bool = typer.Option(False, "--dry-run", help="Show prompts without generating images"),
 ) -> None:
     """Generate infographic slides from a YouTube video."""
@@ -34,16 +33,10 @@ def generate(
     }
     if gemini_key:
         overrides["gemini_api_key"] = gemini_key
-    if youtube_key:
-        overrides["youtube_api_key"] = youtube_key
     settings = Settings(**overrides)
 
     if not settings.gemini_api_key:
         console.print("[red]Error: GEMINI_API_KEY is required. Set via --gemini-key or .env file.[/red]")
-        raise typer.Exit(1)
-
-    if not settings.youtube_api_key:
-        console.print("[red]Error: YOUTUBE_API_KEY is required. Set via --youtube-key or .env file.[/red]")
         raise typer.Exit(1)
 
     results = run_pipeline(

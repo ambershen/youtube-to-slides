@@ -45,16 +45,6 @@ else
     else
         errors+=("GEMINI_API_KEY not found in .env file.")
     fi
-
-    # Check YOUTUBE_API_KEY
-    if grep -q "^YOUTUBE_API_KEY=" "$ENV_FILE"; then
-        yt_key=$(grep "^YOUTUBE_API_KEY=" "$ENV_FILE" | cut -d'=' -f2-)
-        if [ -z "$yt_key" ] || [ "$yt_key" = "your_youtube_data_api_key_here" ]; then
-            errors+=("YOUTUBE_API_KEY in .env is not set. Get one at https://console.cloud.google.com/apis/credentials")
-        fi
-    else
-        errors+=("YOUTUBE_API_KEY not found in .env file.")
-    fi
 fi
 
 # Report results

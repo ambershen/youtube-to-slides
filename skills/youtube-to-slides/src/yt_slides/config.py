@@ -7,8 +7,6 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     gemini_api_key: str = ""
-    youtube_api_key: str = ""
-
     # Gemini model settings
     gemini_text_model: str = "gemini-2.5-flash"
     gemini_image_model: str = "gemini-2.5-flash-image"
@@ -24,4 +22,4 @@ class Settings(BaseSettings):
     max_sections: int = 0  # 0 = unlimited
     max_words_per_infographic: int = 350
 
-    model_config = {"env_file": ".env", "env_prefix": ""}
+    model_config = {"env_file": ".env", "env_prefix": "", "extra": "ignore"}

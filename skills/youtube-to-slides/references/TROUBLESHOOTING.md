@@ -15,17 +15,19 @@ Common errors when running youtube-to-slides and how to fix them.
    GEMINI_API_KEY=your_actual_key_here
    ```
 
-### Missing or invalid YOUTUBE_API_KEY
+### Video metadata extraction fails (yt-dlp)
 
-**Symptom:** Error mentioning YouTube Data API or quota exceeded.
+**Symptom:** Error fetching video metadata or "Video not found".
+
+**Possible causes:**
+- The video is private, age-restricted, or region-locked
+- yt-dlp is outdated and YouTube changed its format
 
 **Fix:**
-1. Go to https://console.cloud.google.com/apis/credentials
-2. Create a new API key (or use an existing one)
-3. Enable the "YouTube Data API v3" at https://console.cloud.google.com/apis/library/youtube.googleapis.com
-4. Add the key to your `.env` file:
-   ```
-   YOUTUBE_API_KEY=your_actual_key_here
+1. Verify the video is publicly accessible in a browser
+2. Update yt-dlp to the latest version:
+   ```bash
+   skills/youtube-to-slides/.venv/bin/pip install --upgrade yt-dlp
    ```
 
 ## Rate Limits

@@ -36,32 +36,22 @@ After installing, run the setup script to create the virtual environment and ins
 bash skills/youtube-to-slides/scripts/setup.sh
 ```
 
-## Get Your API Keys
+## Get Your API Key
 
-This skill requires two API keys. Both are free.
+This skill requires one API key (free).
 
-### 1. Gemini API Key (for image generation)
+### Gemini API Key (for AI summarization and image generation)
 
-The Gemini API uses the [Nano Banana](https://www.aifreeapi.com/en/posts/nano-banana-api-free) model for image generation. The free tier works without a credit card.
+The Gemini API free tier works without a credit card.
 
 1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
 2. Sign in with your Google account
 3. Click **Create API Key**
 4. Copy the key
 
-### 2. YouTube Data API Key (for video metadata & transcripts)
+Video metadata is fetched via [yt-dlp](https://github.com/yt-dlp/yt-dlp) — no API key needed.
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project (or select an existing one)
-3. Go to **APIs & Services > Library**
-4. Search for **YouTube Data API v3** and click **Enable**
-5. Go to **APIs & Services > Credentials**
-6. Click **Create Credentials > API Key**
-7. Copy the key
-
-For a detailed walkthrough, see the [YouTube Data API getting started guide](https://developers.google.com/youtube/v3/getting-started).
-
-### Configure Your Keys
+### Configure Your Key
 
 Create a `.env` file in the skill directory:
 
@@ -70,11 +60,10 @@ cd skills/youtube-to-slides
 cp .env.example .env
 ```
 
-Edit `.env` and add your keys:
+Edit `.env` and add your key:
 
 ```
 GEMINI_API_KEY=your_gemini_api_key_here
-YOUTUBE_API_KEY=your_youtube_data_api_key_here
 ```
 
 ## Usage
@@ -123,7 +112,6 @@ yt-slides "https://youtu.be/VIDEO_ID" --dry-run
 | `--output`, `-o` | `./output` | Output directory |
 | `--dry-run` | off | Preview prompts without generating images |
 | `--gemini-key` | from `.env` | Gemini API key (overrides env) |
-| `--youtube-key` | from `.env` | YouTube API key (overrides env) |
 
 ## Output
 
